@@ -1,0 +1,157 @@
+/* Подключаем базовые стили, если они нужны */
+@import 'primereact/resources/themes/lara-light-indigo/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+
+:root {
+  --cdek-green: #00a652;
+  --status-green: #4CAF50;
+  --status-yellow: #FFC107;
+  --status-red: #F44336;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Стили для фиксированных элементов --- */
+
+.fixed-logo, .fixed-profile {
+  position: fixed;
+  top: 20px;
+  z-index: 1001;
+}
+
+.fixed-logo {
+  left: 30px;
+}
+
+.fixed-profile {
+  right: 30px;
+}
+
+/* --- Стили для ОВАЛЬНОГО МЕНЮ --- */
+
+.oval-menubar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 40px;
+  
+  /* Эффект "матового стекла" */
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(12px); /* Для Safari */
+  backdrop-filter: blur(12px);
+  
+  /* Овальная форма и тень */
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.oval-menu-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 20px;
+  position: relative;
+}
+
+.oval-menu-item:hover {
+  background-color: var(--cdek-green);
+  color: white;
+}
+
+/* --- Стили для выпадающего меню --- */
+
+.dropdown-container {
+  position: relative;
+}
+
+.oval-dropdown-menu {
+  position: absolute;
+  top: 110%; /* Располагаем под родительским элементом */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 8px;
+  min-width: 220px; /* Чтобы текст не переносился */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.oval-dropdown-menu a {
+  padding: 12px 18px;
+  color: #333;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.oval-dropdown-menu a:hover {
+  background-color: var(--cdek-green);
+  color: white;
+}
+
+/* --- Стили для обводки аватара --- */
+.profile-avatar-wrapper {
+  padding: 3px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.profile-avatar-wrapper.green { border-color: var(--status-green); }
+.profile-avatar-wrapper.yellow { border-color: var(--status-yellow); }
+.profile-avatar-wrapper.red { border-color: var(--status-red); }
+
+/* --- Основной контент и футер --- */
+
+.main-content {
+  flex: 1;
+  padding: 120px 30px 30px; /* Добавлен отступ сверху, чтобы контент не был под меню */
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cdek-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}

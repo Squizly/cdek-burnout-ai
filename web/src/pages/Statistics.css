@@ -1,0 +1,263 @@
+/* Statistics.css */
+
+.statistics-page {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.statistics-header {
+    margin-bottom: 2rem;
+}
+
+.statistics-title-section {
+    text-align: center;
+}
+
+.statistics-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.statistics-subtitle {
+    color: #6c757d;
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+}
+
+/* Табы */
+.p-tabview {
+    background: transparent;
+}
+
+.p-tabview-nav {
+    background: white;
+    border-radius: 12px 12px 0 0;
+    border: none;
+}
+
+.p-tabview-panels {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.tab-content {
+    padding-top: 1.5rem;
+}
+
+/* Панель фильтров */
+.filters-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-card h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.filters-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.personal-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.875rem;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Кнопки */
+.apply-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.apply-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Карточки статистики */
+.stats-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card-content {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* График */
+.chart-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+.loading-container p {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Утилиты */
+.w-full {
+    width: 100%;
+}
+
+/* Стили для PrimeReact компонентов */
+.p-multiselect {
+    width: 100%;
+}
+
+.p-calendar {
+    width: 100%;
+}
+
+.p-dropdown {
+    width: 100%;
+}
+
+.p-divider {
+    margin: 1rem 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .statistics-page {
+        padding: 1rem;
+    }
+    
+    .stats-cards-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters-panel {
+        flex-direction: column;
+    }
+    
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-actions {
+        justify-content: stretch;
+    }
+    
+    .apply-button {
+        width: 100%;
+    }
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.chart-card .chart-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

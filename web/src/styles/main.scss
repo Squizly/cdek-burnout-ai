@@ -1,0 +1,8 @@
+@use '@cdek-it/react-ui-kit/dist/theme-light.css';
+@use '@cdek-it/react-ui-kit/dist/utils/typography.scss';
+@use '@cdek-it/react-ui-kit/dist/utils/icons.scss';
+
+body .p-menubar {
+  border-bottom: 2px solid red;
+}
+

@@ -1,0 +1,354 @@
+/* Импорт основных стилей */
+@import './styles/main.scss';
+
+/* СДЭК цветовая схема */
+:root {
+  --cdek-green: #00A651;
+  --cdek-green-hover: #008841;
+  --cdek-green-light: #E8F5E9;
+  --cdek-dark: #1C1B22;
+  --cdek-gray: #666666;
+  --cdek-light-gray: #F5F5F5;
+  --cdek-border: #E0E0E0;
+  --header-height: 70px;
+  --footer-height: 72px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFAFA;
+  color: #333333;
+}
+
+/* Основной контейнер */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* =================== HEADER =================== */
+.cdek-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  height: var(--header-height);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* Секция с логотипом */
+.logo-section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logo-section:hover {
+  opacity: 0.8;
+}
+
+.logo-section img {
+  height: 32px;
+  width: auto;
+}
+
+/* Вертикальный разделитель */
+.header-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #E0E0E0;
+  margin-right: 24px;
+  flex-shrink: 0;
+}
+
+/* =================== НАВИГАЦИЯ =================== */
+.navigation-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  height: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #6C757D;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+
+  box-shadow: none !important;
+  transform: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-item i {
+  font-size: 18px;
+}
+
+.nav-item:hover {
+  background-color: #E9ECEF;
+  color: #333333;
+}
+
+.nav-item:active {
+  background-color: #E9ECEF;
+  color: #333333;
+}
+
+/* Активная кнопка НЕ выделяется постоянно */
+.nav-item.active-menu-item {
+  background: transparent !important;
+  color: #6C757D !important;
+  font-weight: 500 !important;
+}
+
+/* Убираем нижнюю линию */
+.nav-item.active-menu-item::after {
+  display: none !important;
+}
+
+/* Убираем focus-обводку */
+.nav-item:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =================== Секция профиля =================== */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  padding-left: 24px;
+  border-left: 1px solid var(--cdek-border);
+  flex-shrink: 0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  margin-right: 4px;
+}
+
+.profile-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-role {
+  font-size: 12px;
+  color: var(--cdek-gray);
+}
+
+.profile-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-avatar-wrapper:hover {
+  background-color: var(--cdek-light-gray);
+}
+
+.profile-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  border: 2px solid var(--cdek-green-light);
+}
+
+.profile-dropdown-trigger {
+  background: none;
+  border: none;
+  color: var(--cdek-gray);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-dropdown-trigger i {
+  font-size: 12px;
+}
+
+/* =================== MAIN CONTENT =================== */
+.main-content {
+  flex: 1;
+  margin-top: var(--header-height);
+  padding: 32px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =================== CARDS =================== */
+.p-card {
+  border-radius: 16px !important;
+  border: 1px solid var(--cdek-border) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  margin-bottom: 24px;
+  background: #FFFFFF !important;
+}
+
+.p-card .p-card-body {
+  padding: 32px !important;
+}
+
+/* =================== FOOTER =================== */
+.cdek-footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--cdek-border);
+  padding: 24px 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.footer-container p {
+  color: var(--cdek-gray);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 1024px) {
+  /* Убраны старые стили футера */
+}
+
+@media (max-width: 768px) {
+  .header-container,
+  .content-wrapper,
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .navigation-menu {
+    gap: 2px;
+  }
+
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .nav-item span {
+    display: none;
+  }
+
+  .footer-container p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-avatar {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .cdek-footer {
+    padding: 20px 0;
+  }
+}
+
+.statistics-page {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.statistics-page h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.filters-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.filters-panel .p-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filters-panel .p-field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.chart-container {
+  position: relative;
+  height: 500px;
+  width: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,58 @@
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-card {
+  width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* --- НОВЫЕ СТИЛИ ДЛЯ ЗАГОЛОВКА И ЛОГОТИПА --- */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem; /* Отступ между заголовком и формой */
+}
+
+.login-logo {
+  height: 40px; /* Вы можете изменить размер по желанию */
+  margin-bottom: 1rem; /* Отступ между лого и текстом "Вход в кабинет" */
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0; /* Убираем стандартные отступы у h2 */
+}
+/* --- КОНЕЦ НОВЫХ СТИЛЕЙ --- */
+
+.login-form .p-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.login-form .p-password {
+  width: 100%;
+}
+
+/* --- СТИЛИ ДЛЯ ФИРМЕННОЙ КНОПКИ --- */
+.login-button-cdek {
+  background-color: #00A651 !important; /* Фирменный зеленый цвет СДЭК */
+  border-color: #00A651 !important;     /* Тот же цвет для рамки */
+}
+
+/* Эффект при наведении курсора (делаем кнопку чуть темнее) */
+.login-button-cdek:hover {
+  background-color: #008f46 !important; /* Более темный оттенок зеленого */
+  border-color: #008f46 !important;
+}
